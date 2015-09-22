@@ -2,7 +2,11 @@
     include "view/theme/header.php";
 ?>
 <h1>Đăng kí toàn khoản</h1>
-
+<?php
+    if(isset($error)){
+        echo "<h3 style='color:red'>".$error."</h3>";
+    }
+?>
 <form method="post" action="" id="form-register">
     <label>Tài khoản</label><br />
     <input type="text" name="username" /><br />
@@ -24,8 +28,7 @@
     <label>Thông tin cơ bản</label><br />
     <textarea name="info">
     </textarea><br />
-    <input type="checkbox" name="remember" checked/>
-    <label>Ghi nhớ đăng nhập</label><br />
+    
     <input type="submit" name="ok" value="Đăng kí"/>
 </form>
 

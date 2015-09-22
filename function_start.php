@@ -4,4 +4,11 @@
         or die ("<h1>Error to connect DB");
     $select_db = mysql_select_db(DB_NAME, $connect_db)
         or die ("<h1>Error to select DB");
+    
+    /**
+     * Chuyen trang
+     */
+    function redirect($url){
+        header("location:".$url);
+    }
 ?>
