@@ -8,4 +8,15 @@
         mysql_query($sql);
         
     }
+    
+    function getProducts(){
+        $sql = "select * from products";
+        return mysql_query($sql);
+    }
+    
+    function deleteOneProduct($id){
+        $sql = "delete from products where id = $id";
+        mysql_query($sql);
+       
+    }
 ?>

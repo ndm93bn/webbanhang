@@ -13,13 +13,20 @@ if(isset($_GET['action'])){
             case "new": 
                 newProduct(); 
                 break;   
+            case "delete":
+                deleteProduct($_GET['id']);
+                break;
             default : echo "URL not found";
         }
         
     } else{
         include "view/product/index.php";
     }
-    
+
+function deleteProduct($id){
+    deleteOneProduct($id);
+    redirect("index.php?controller=product");
+}  
 function newProduct(){
   
     if(isset($_POST['ok'])){
@@ -30,10 +37,17 @@ function newProduct(){
         } else if($_FILES['img']['name'] == ""){
             $error = "Chưa thêm ảnh sản phẩm";
         } else{
+            $img_name = "images/".md5($_FILES['img']['name'].time()).".png";
+            
+            move_uploaded_file($_FILES["img"]["tmp_name"], 
+            $img_name);
+            
             insertProduct($_POST['name'], $_POST['price'],
-            $_POST['info'],$_FILES['img']['name']);
+            $_POST['info'],$img_name);
             
             $error = "Thêm sản phẩm mới thành công";
+            
+            redirect("index.php?controller=product");
         }
     }
     include "view/product/new.php";

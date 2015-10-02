@@ -74,3 +74,31 @@ body{
 }
 
 /** END CSS cho form regsiter */
+
+/** CSS for table */
+.my-table{
+    width:90%;
+    margin: auto;
+    border-collapse: collapse;
+    border: #000 solid 1px;
+}
+.my-table td{
+    border: #ccc solid 1px;
+    padding:5px;
+    background: #ebebeb;
+    text-align: center;
+  
+}
+.my-table td.align-left{
+    text-align: left;
+  
+}
+.my-table th{
+    border: #ccc solid 1px;
+    padding:5px;
+    font-weight: bold;
+    color:#fff;
+    background: #424242;    
+ 
+}
+/** ENd CSS for table */
