@@ -102,3 +102,18 @@ body{
  
 }
 /** ENd CSS for table */
+
+/** CSS for Product */
+#content{
+    padding: 20px;
+}
+#content h1{
+    color:green;
+}
+
+#price{
+    color:red;
+    font-weight: bold;
+    font-size: 18px;
+}
+/** END CSS for Product */

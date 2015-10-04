@@ -9,6 +9,8 @@
 <table class="my-table">
 <tr><th>STT</th><th>Minh họa</th><th>Tên</th><th>Giá</th>
 <th>Lượt xem</th>
+<th>Người tạo</th>
+<th>Xem </th>
 <th>Chỉnh sửa</th>
 <th>Xóa</th>
 </tr>
@@ -21,6 +23,13 @@
         echo "<td class ='align-left'>$p[name]</td>";
         echo "<td>$p[price]</td>";
         echo "<td>$p[view]</td>";
+        
+        $u = getUserById($p['user_id']);
+        echo "<td>$u[fullname]</td>";
+        
+        echo "<td><a href='index.php?controller=product".
+        "&action=view&id=$p[id]'>Xem</a></td>";
+        
         echo "<td><a href='index.php?controller=product".
         "&action=edit&id=$p[id]'>Sửa</a></td>";
         echo "<td><a href='index.php?controller=product".

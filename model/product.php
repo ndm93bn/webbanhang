@@ -14,9 +14,24 @@
         return mysql_query($sql);
     }
     
+    function getProductById($id){
+        $sql = "select * from products where id =$id";
+        $query =  mysql_query($sql);
+        return mysql_fetch_array($query);
+    }
+    
     function deleteOneProduct($id){
         $sql = "delete from products where id = $id";
         mysql_query($sql);
        
+    }
+    
+    function  updateProduct($p){
+        $sql = "update products set name = '$p[name]',
+            price = $p[price] ,img = '$p[img]' ,
+            info = '$p[info]' where id = $p[id]";
+            echo $sql;
+        mysql_query($sql);
+        
     }
 ?>
